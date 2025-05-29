@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Poster Hover Background</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .Banner {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 50px;
+      z-index: 1;
+    }
+
+    .poster-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .poster-container img {
+      width: 200px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .poster-container:hover img {
+      opacity: 0;
+      transform: scale(1.05);
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .video-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .poster-container:hover .video-bg {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="Banner">
+    <div class="poster-container">
+      <img src="/task1/Expired - domain expired.jpg" alt="Hover to play video 1">
+      <div class="video-bg">
+        <video autoplay muted loop playsinline>
+          <source src="/task1/Sully - Official Trailer [HD].mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="poster-container">
+      <img src="/task1/image copy.png" alt="Hover to play video 2">
+      <div class="video-bg">
+        <video autoplay muted loop playsinline>
+          <source src="/task1/videoplayback.webm" type="video/webm">
+        </video>
+      </div>
+    </div>
+
+    <div class="poster-container">
+      <img src="/task1/image.png" alt="Hover to play video 3">
+      <div class="video-bg">
+        <video autoplay muted loop playsinline>
+          <source src="/task1/YOU _ Series Trailer _ Netflix.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
